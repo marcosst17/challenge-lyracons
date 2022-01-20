@@ -270,6 +270,45 @@ nav .menu-item {
     }
 }
 
+@media (max-width: 475px){
+    .grid-container{
+        padding: 0.3rem;
+        padding-top: 1rem;
+        gap: 0.5rem;
+        grid-template-columns: repeat(auto-fill,minmax(175px, 1fr));
+    }
+    .product-container{
+        width: 175px;
+    }
+    .product-photo{
+        width: 150px;
+    }
+    .product-buy-button{
+        width: 150px;
+    }
+}
+
+@media (max-width: 368px){
+    .grid-container{
+        grid-template-columns: repeat(auto-fill,minmax(130px, 1fr));
+    }
+    .product-container{
+        width: 130px;
+        height: 200px;
+    }
+    .product-photo{
+        width: 110px;
+        height: 90px;
+    }
+    .product-info-div h4 {
+        font-size: 12px;
+    }
+    .product-buy-button{
+        width: 110px;
+        font-size: 0.75rem;
+    }
+}
+
 /*
 -------------------- ANIMATIONS -----------------------
 */
