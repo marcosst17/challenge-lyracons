@@ -40,10 +40,6 @@ nav h3 {
     margin: 0;
 }
 
-nav .hamburger-menu {
-    color: black;
-}
-
 nav .lyracons-logo {
     width: 165px;
     margin-left: 2rem;
@@ -97,7 +93,6 @@ nav .menu-item {
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
     gap: 1rem;
-    /* justify-content: center; */
     padding: 30px;
 }
 
@@ -150,10 +145,6 @@ nav .menu-item {
 .product-info-div h5 {
     font-size: 12px;
     font-weight: 400;
-}
-
-.product-buy-div {
-    background: blue;
 }
 
 .product-buy-button{
@@ -211,6 +202,33 @@ nav .menu-item {
     font-size: 1rem;
 }
 
+.dropdown-div-mobile {
+    position: relative;
+    outline: none;
+    border: none;
+    background: transparent;
+    padding: 0;
+    text-align: left;
+}
+.dropdown-menu-mobile{
+    background-color: #C4C4C4;
+    border-radius: 4px;
+    box-shadow: 0 0.15em 0.25em rgba(black, 0.25);
+    padding: 1rem 2rem;
+    width: 200px;
+    margin-bottom: 0;
+    margin-top: 1rem;
+    display: none;
+    transition: 0.2s all ease-out;
+}
+.dropdown-menu-mobile li {
+    margin-block: 1rem;
+    font-size: 1.1rem;
+}
+.dropdown-div-mobile:focus .dropdown-menu-mobile{
+    display: block;
+}
+
 /* 
 ---------------- MEDIA QUERIES ----------------
 */
@@ -249,32 +267,6 @@ nav .menu-item {
 @media (max-width: 768px){
     nav .menu-item{ 
         display: none;
-    }
-    .dropdown-div-mobile {
-        position: relative;
-        outline: none;
-        border: none;
-        background: transparent;
-        padding: 0;
-        text-align: left;
-    }
-    .dropdown-menu-mobile{
-        background-color: #C4C4C4;
-        border-radius: 4px;
-        box-shadow: 0 0.15em 0.25em rgba(black, 0.25);
-        padding: 1rem 2rem;
-        width: 200px;
-        margin-bottom: 0;
-        margin-top: 1rem;
-        display: none;
-        transition: 0.2s all ease-out;
-    }
-    .dropdown-menu-mobile li {
-        margin-block: 1rem;
-        font-size: 1.1rem;
-    }
-    .dropdown-div-mobile:focus .dropdown-menu-mobile{
-        display: block;
     }
 }
 
