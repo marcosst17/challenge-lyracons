@@ -1,0 +1,314 @@
+body {
+    font-family: "Lato";
+}
+
+/* 
+---------------- NAVIGATION ----------------
+*/
+
+nav {
+    background: hsl(0, 0%, 77%);
+    margin: 0;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    animation: drop-down 0.75s ease-out;
+}
+
+nav .hamburger-container{
+    position: absolute;
+    left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger-container button {
+    outline: none;
+    bordeR: none;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav h3 {  
+    margin: 0;
+}
+
+nav .hamburger-menu {
+    color: black;
+}
+
+nav .lyracons-logo {
+    width: 165px;
+    margin-left: 2rem;
+    cursor: pointer;
+}
+
+nav .menu-item-4 {
+    margin-right: auto;
+}
+
+nav .menu-item {
+    margin-left: 3rem;
+    cursor: pointer;
+}
+
+.menu-item-mobile{ 
+    cursor: pointer;
+}
+
+.mobile-menu h4 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+}
+
+.mobile-menu {
+    background: rgb(228, 226, 226);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 32px;
+    padding-left: 36px;
+    padding-right: 36px;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-out;
+}
+
+.mobile-menu[data-visible="true"]{
+    transform: translateX(0%);
+}
+
+/* 
+---------------- GRID ----------------
+*/
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
+    gap: 1rem;
+    /* justify-content: center; */
+    padding: 30px;
+}
+
+/* 
+---------------- CARDS ----------------
+*/
+
+.product-container{
+    background: #EAEAEA;
+    padding-top: 12px;
+    width: 200px;
+    height: 286px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 auto;
+    transition: all 0.15s linear;
+    animation: fade-in 0.75s ease-out;
+}
+
+.product-container:hover {
+    transform: scale(1.01)
+}
+
+.product-container h4, .product-container h5 {
+    margin: 0;
+}
+
+.product-photo{
+    width: 170px;
+    height: 170px;
+    margin: 0;
+}
+
+.product-info-div{
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.product-info-div h4 {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.product-info-div h5 {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.product-buy-div {
+    background: blue;
+}
+
+.product-buy-button{
+    background: #C4C4C4;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    padding: 5px;
+    width: 170px;
+}
+
+/*
+---------------- SIDEBAR -----------------
+*/
+
+.sidebar {
+    display: none;
+    transition: background 0.2s linear;
+}
+
+/*
+---------------- DROPDOWN -----------------
+*/
+
+.dropdown-div {
+    position: relative;
+    display: none;
+}
+
+.dropdown-menu {
+    background-color: #C4C4C4;
+    border-radius: 4px;
+    box-shadow: 0 0.15em 0.25em rgba(black, 0.25);
+    padding: 0.5rem 2rem;
+    min-width: 15ch;
+    position: absolute;
+    top: calc(100% - 1rem);
+    left: 70%;
+    transform: rotateX(-90deg) translateX(-50%);
+    transform-origin: top center;
+    opacity: 0.3;
+    transition: 0.2s all ease-out;
+}
+
+.dropdown-div:hover .dropdown-menu{
+    opacity: 1;
+    transform: rotateX(0) translateX(-50%);
+    visibility: visible;
+}
+
+.dropdown-menu li {
+    color: #444;
+    display: block;
+    padding: 0.5em;
+    font-size: 1rem;
+}
+
+/* 
+---------------- MEDIA QUERIES ----------------
+*/
+
+@media (min-width: 768px){
+    nav .hamburger-menu{
+        display: none;
+    }
+
+    .mobile-menu{
+        display: none;
+    }
+
+    .sidebar{
+        display: block;
+        background: orange;
+        float: left;
+        height: 616px;
+        margin-top: 30px;
+        width: 200px;
+        margin-left: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sidebar-text{
+        animation: text-enter 0.5s ease-out;
+    }
+
+    .dropdown-div {
+        display: block;
+    }
+}
+
+@media (max-width: 768px){
+    nav .menu-item{ 
+        display: none;
+    }
+    .dropdown-div-mobile {
+        position: relative;
+        outline: none;
+        border: none;
+        background: transparent;
+        padding: 0;
+        text-align: left;
+    }
+    .dropdown-menu-mobile{
+        background-color: #C4C4C4;
+        border-radius: 4px;
+        box-shadow: 0 0.15em 0.25em rgba(black, 0.25);
+        padding: 1rem 2rem;
+        width: 200px;
+        margin-bottom: 0;
+        margin-top: 1rem;
+        display: none;
+        transition: 0.2s all ease-out;
+    }
+    .dropdown-menu-mobile li {
+        margin-block: 1rem;
+        font-size: 1.1rem;
+    }
+    .dropdown-div-mobile:focus .dropdown-menu-mobile{
+        display: block;
+    }
+}
+
+/*
+-------------------- ANIMATIONS -----------------------
+*/
+
+@keyframes text-enter {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes drop-down {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
